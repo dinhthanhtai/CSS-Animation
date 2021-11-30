@@ -2,25 +2,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Transition</title>
+<title>Translate in 3D</title>
 <style type="text/css">
+ /* luon luon co perspective khi sai 3D */
+body {
+	perspective: 1000px;
+}
 
 img {
 	width: 300px;
 	display: block;
 	margin: auto;
-	margin-bottom: 70px;
-	margin-top: 70px;
+	margin-top: 200px;
 	transition: transform 1s;
 }
 
-.second {
-	transform-origin: top left;
-	margin-bottom: 0;
-}
-
-.first:hover, .second:hover {
-	transform: rotate(30deg);
+img:hover {
+	transform: translateZ(300px);
 }
 
 </style>
@@ -29,7 +27,6 @@ img {
 <body>
 
 	<img src="cat.jpg" alt="" class="first">
-	<img src="cat.jpg" alt="" class="second">
 
 </body>
 </html>
