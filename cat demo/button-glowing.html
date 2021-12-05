@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Transition</title>
+<style type="text/css">
+
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    background-color: #222;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 3rem;
+	border: 5px solid white;
+	padding: 3rem 4rem;
+	position: relative;
+	border-radius: 1rem;
+	overflow: hidden;
+}
+
+a::before {
+	content: '';
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: whitesmoke;
+	border-radius: 1rem;
+
+	transform: translateX(-100%) rotate(45deg);
+	transition: all 0.3s;
+}
+
+a:hover::before {
+    transform: translateX(100%) rotate(45deg);
+}
+
+a:hover {
+    background-color: tomato;
+}
+
+</style>
+</head>
+
+<body>
+
+	<a> hover me </a>
+
+</body>
+</html>
