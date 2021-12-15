@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Wavy button effect </title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: sans-serif;
+            /* background-color: #272727; */
+        }
+
+        a {
+            text-decoration: none;
+            width: 160px;
+            height: 60px;
+            color: black;
+            line-height: 60px;
+            text-align: center;
+            text-transform: capitalize;
+            font-size: 25px;
+            position: relative;
+            transition: all 0.2s;
+            overflow: hidden;
+        }
+        
+        a span { 
+            position: absolute;
+            width: 97%;
+            height: 92%;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+            border: 2px solid black;
+            z-index: -1;
+            transition: all 0.2s;
+        }
+
+        span::before {
+            content: '';
+            position: absolute;
+            width: 8%;
+            height: 500%;
+            background-color: white;
+            top: 50%;
+            left: 50%;
+            transition: all .2s;
+            transform: translate(-50%, -50%) rotate(-60deg);
+        }
+
+        a:hover span::before {
+            width: 100%;
+            background-color: black;
+            transform: translate(-50%, -50%) rotate(60deg);
+        }
+
+        a:hover {
+            color: white;
+        }
+       
+    </style>
+</head>
+<body>
+    <a href="#">
+        button
+        <span></span>
+    </a>
+</body>
+</html>
