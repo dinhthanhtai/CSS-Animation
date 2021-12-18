@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Moving bottom border html </title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        ul {
+            padding: 0;
+            display: flex;
+            list-style: none;
+        }
+        
+        li {
+            padding: 10px 20px;
+        }
+
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 20px;
+            color: #222;
+            position: relative;
+        }
+
+        ul li a::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 5px;
+            background-color: #00bcd4;
+            top: 120%;
+            left: 0;
+            transition: all 0.3s;
+        }
+
+        ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 5px;
+            background-color: #f0f;
+            top: 120%;
+            right: 0;
+            transition: all 0.3s;
+        }
+
+        ul li a:hover::before {
+            width: 50%;
+            transform: translateX(100%);
+        }
+
+        ul li a:hover::after {
+            width: 50%;
+            transform: translateX(-100%);
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</body>
+</html>

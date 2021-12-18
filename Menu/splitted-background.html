@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Growing borders menu</title>
+	<style>
+		body {
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-family: sans-serif;
+		}
+
+        ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            list-style: none;
+        }
+
+        ul li a {
+            display: block;
+            width: 120px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: red;
+            text-transform: capitalize;
+            text-decoration: none;
+            position: relative;
+            transition: all 0.5s;
+        }
+
+        ul li span { 
+            position: absolute;
+            /* width: 25%;
+            height: 100%; */
+            width: 100%;
+            height: 25%;
+            background-color: #262626;
+            z-index: -1;
+            left: 0;
+            top: 0;
+            /* transform: scaleY(0); */
+            transform: scaleX(0);
+            transition: all 0.5s;
+            transform-origin: center;
+        }
+
+        ul li a:hover span {
+            /* transform: scaleY(1); */
+            transform: scaleX(1);
+        }
+
+        ul li a:hover {
+            color: white;
+        }
+        
+        span:nth-child(2) {
+            top: 25%;
+            transition-delay: 0.15s;
+        }
+        
+        span:nth-child(3) {
+            top: 50%;
+            transition-delay: 0.23s;
+        }
+
+        span:nth-child(4) {
+            top: 75%;
+            transition-delay: 0.45s;
+        }
+
+	</style>
+</head>
+<body>
+	<ul>
+		<li><a href="#">
+            Home
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </a></li>
+		<li><a href="#">
+            About
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </a></li>
+		<li><a href="#">
+            Services
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </a></li>
+		<li><a href="#">
+            Portfolio
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </a></li>
+		<li><a href="#">
+            Contact
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </a></li>
+	</ul>
+</body>
+</html>
