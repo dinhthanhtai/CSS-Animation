@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border snipper</title>
+    <style>
+        body {
+            background-color: #333;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        ul li a {
+            position: relative;
+            display: block;
+            color: transparent;
+            -webkit-text-stroke: 1px white;
+            font-size: 80px;
+            font-weight: 900;
+            text-decoration: none;
+        }
+
+        ul li a::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 0.5s;
+            text-transform: capitalize;
+        }
+
+        ul li a::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 0.5s;
+            text-transform: capitalize;
+        }
+
+        ul li a:hover::before {
+            color: rgb(187, 0, 0);
+            z-index: 1;
+            -webkit-text-stroke: 1px black;
+            transform: translate(10px, -10px);
+        }
+
+        ul li a:hover::after {
+            color: rgb(119, 239, 255);
+            z-index: 2;
+            -webkit-text-stroke: 1px black;
+            transform: translate(20px, -20px);
+        }
+
+        ul li a:hover {
+            color: white;
+            -webkit-text-stroke: 1px black;
+            transition: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#" data-text="home">Home</a></li>
+        <li><a href="#" data-text="about">About</a></li>
+        <li><a href="#" data-text="services">Services</a></li>
+        <li><a href="#" data-text="team">Team</a></li>
+        <li><a href="#" data-text="contact">Contact</a></li>
+    </ul>
+</body>
+</html>
